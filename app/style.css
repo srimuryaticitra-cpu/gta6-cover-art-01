@@ -1,0 +1,34 @@
+/* Kura Cover Studio: a dark editor shell so the bright cover pops. */
+html, body { margin: 0; min-height: 100%; background: #14101d; color: #f2eef8; font: 15px/1.45 system-ui, sans-serif; }
+.app { display: flex; gap: 28px; align-items: flex-start; justify-content: center; padding: 22px; box-sizing: border-box; }
+.controls { display: flex; flex-direction: column; gap: 16px; width: 330px; flex: none; }
+.controls h1 { margin: 0; font-size: 30px; letter-spacing: 0.5px; background: linear-gradient(90deg, #ffd76e, #ff5e78); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tag { margin: 0; color: #b9b0cc; }
+.group { display: flex; flex-direction: column; gap: 10px; padding: 14px; border: 1px solid #332a4a; border-radius: 12px; background: #1d1729; }
+.group h2 { margin: 0; font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: #ffd76e; }
+.hint { margin: 0; color: #9a8fb5; font-size: 13px; }
+label { display: flex; flex-direction: column; gap: 6px; font-weight: 600; font-size: 13px; }
+input[type=text], select { font: inherit; padding: 9px; border: 1px solid #4a3f66; border-radius: 8px; background: #14101d; color: #f2eef8; }
+input[type=range] { accent-color: #ff5e78; }
+button { font: inherit; font-weight: 700; padding: 10px 12px; border: 1px solid #4a3f66; border-radius: 8px; background: #2a2140; color: #f2eef8; cursor: pointer; }
+button:hover { border-color: #ffd76e; }
+button.on { background: linear-gradient(90deg, #ff7e5f, #ff2e88); border-color: transparent; color: #fff; }
+button.primary { background: linear-gradient(90deg, #ff7e5f, #ff2e88); border-color: transparent; color: #fff; font-size: 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.row button { flex: 1 1 auto; padding: 8px 6px; font-size: 13px; }
+.file input { margin-top: 4px; }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
+.thumb { padding: 2px; border-radius: 6px; }
+.thumb canvas { display: block; width: 96px; height: 72px; border-radius: 4px; }
+#status { margin: 0; min-height: 1.2em; color: #7df9c9; font-size: 13px; }
+.preview { position: sticky; top: 22px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.preview canvas { max-width: 100%; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55); border-radius: 6px; background: #2b1055; touch-action: none; cursor: grab; }
+.preview canvas:active { cursor: grabbing; }
+.preview .hint { text-align: center; }
+
+/* Screenshot mode: the cover alone fills the window. */
+body.shot-cover { background: #000; }
+body.shot-cover .controls, body.shot-cover .preview .hint { display: none; }
+body.shot-cover .app { padding: 0; gap: 0; }
+body.shot-cover .preview { position: static; }
+body.shot-cover canvas { width: 100vw !important; height: 100vh !important; box-shadow: none; border-radius: 0; }
